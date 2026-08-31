@@ -83,14 +83,137 @@
             font-size: 0.8rem;
             color: #444444;
             padding-bottom: 10px;
-        }
+        } .hero-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  background-image: url('IMG_3618.jpeg');
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(0, 0, 0, 0.45) 0%, 
+    rgba(0, 0, 0, 0.3) 50%, 
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title .highlight {
+  font-style: italic;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.hero-discount {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 75vh;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  .hero-discount {
+    font-size: 13px;
+  }
+  .hero-btn {
+    padding: 12px 30px;
+    font-size: 13px;
+  }
+}
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">EGE DRIP</div>
-    </header>
+    </header><section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-subtitle">NEW SEASON / 2026</p>
+    <h1 class="hero-title">
+      SEZON SONU<br>
+      <span class="highlight">İNDİRİMLERİ!</span>
+    </h1>
+    <p class="hero-discount">%50'YE VARAN İNDİRİMLERİ KAÇIRMA</p>
+    <a href="#urunler" class="hero-btn">SİPARİŞ VER</a>
+  </div>
+</section>
+
 
     <div class="main-content">
         <h1 class="main-title">YENİ SEZON KOLEKSİYONU</h1>
