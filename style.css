@@ -1,4 +1,10 @@
-<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -11,6 +17,44 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: sans-serif;
 }
-</style>
+
+.hero-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+    width: 90%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #a1a1a1;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.btn-drip {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+}
+
