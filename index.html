@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>egeDrip - Yakında Buradayız</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap" rel="stylesheet">
+    <title>EGE DRIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,83 +14,97 @@
         }
 
         body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #0d0d0d;
+            background-color: #0a0a0a;
             color: #ffffff;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
-                              url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .hero-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px 20px 20px;
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-            max-width: 500px;
-            width: 90%;
         }
 
-        .hero-title {
-            font-size: 2.5rem;
+        header {
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 15px;
         }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: #d1d1d1;
-            margin-bottom: 10px;
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: auto 0;
+        }
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            word-wrap: break-word;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #b3b3b3;
+            line-height: 1.5;
+            margin-bottom: 35px;
+            max-width: 400px;
             font-weight: 400;
         }
 
-        .hero-coming-soon {
-            font-size: 0.9rem;
-            color: #a1a1a1;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        .btn-drip {
+        .btn-koleksiyon {
             display: inline-block;
-            padding: 15px 35px;
             background-color: #ffffff;
             color: #000000;
+            padding: 16px 36px;
+            font-size: 0.95rem;
             font-weight: 800;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             border-radius: 4px;
-            transition: all 0.3s ease;
+            border: none;
         }
 
-        .btn-drip:hover {
-            background-color: #000000;
-            color: #ffffff;
-            border: 1px solid #ffffff;
+        footer {
+            font-size: 0.8rem;
+            color: #555555;
+            padding-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-container">
-        <h1 class="hero-title">EGEDRIP</h1>
-        <p class="hero-subtitle">Türkiye'nin En İyi Sokak Giyimi ve Drip Kültürü</p>
-        <p class="hero-coming-soon">// Yakında Buradayız, Beklemede Kal.</p>
-        <a href="#" class="btn-drip">Bize Katıl</a>
+    <header>
+        <div class="logo">EGE DRIP</div>
+    </header>
+
+    <div class="main-content">
+        <h1 class="main-title">YENİ SEZON KOLEKSİYONU</h1>
+        <p class="description">Sokak modasının en özel parçaları ve sınırlı sayıdaki drop'lar çok yakında burada.</p>
+        <a href="#" class="btn-koleksiyon">KOLEKSİYONU İNCELE</a>
     </div>
+
+    <footer>
+        © 2026 egeDrip. Tüm hakları saklıdır.
+    </footer>
 
 </body>
 </html>
+
 
 
