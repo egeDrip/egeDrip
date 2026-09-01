@@ -3,314 +3,717 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>egeDrip | Streetwear</title>
+
+<title>egeDrip — Yeni Sezon</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#f7f8fa;color:#08090b}
-button,input,textarea{font-family:inherit}
-button{cursor:pointer}
-a{text-decoration:none;color:inherit}
 
-.top{
-background:#08090b;color:#fff;text-align:center;padding:9px;
-font-size:10px;letter-spacing:1.5px
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =========================
+   AYARLAR
+========================= */
+
+:root{
+    --blue:#78d7ff;
+    --light:#eefaff;
+    --black:#080808;
+    --gray:#999;
+}
+
+
+/* =========================
+   ÜST BİLGİ
+========================= */
+
+.topbar{
+    height:32px;
+    background:#78d7ff;
+    color:#050505;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-height:78px;background:#fff;border-bottom:1px solid #eee;
-display:flex;align-items:center;justify-content:space-between;
-padding:0 6%;position:sticky;top:0;z-index:20
+    height:75px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#080808;
+    border-bottom:1px solid #202020;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo{font-size:29px;font-weight:900;letter-spacing:-2px}
-.logo span{color:#72c9f1}
+.logo{
+    font-size:27px;
+    font-weight:950;
+    letter-spacing:-2px;
+}
 
-nav{display:flex;gap:25px}
+.logo span{
+    color:var(--blue);
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
 nav button{
-background:none;border:0;font-size:11px;font-weight:bold
+    background:none;
+    color:white;
+    border:0;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
 }
-nav button:hover{color:#54acd6}
 
-.icons{display:flex;gap:5px}
-.icon{
-border:0;background:white;width:40px;height:40px;
-font-size:20px;position:relative
+nav button:hover{
+    color:var(--blue);
 }
+
+.header-right{
+    display:flex;
+    gap:8px;
+}
+
+.header-btn{
+    width:40px;
+    height:40px;
+    border:1px solid #282828;
+    background:#101010;
+    color:white;
+    border-radius:50%;
+    font-size:17px;
+}
+
+.header-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
 .cart-count{
-position:absolute;right:0;top:0;background:#08090b;color:#fff;
-width:17px;height:17px;border-radius:50%;
-font-size:9px;display:flex;align-items:center;justify-content:center
+    position:absolute;
+    margin-left:-12px;
+    margin-top:-5px;
+    background:var(--blue);
+    color:#000;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    font-size:9px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-min-height:600px;background:#08090b;color:#fff;
-display:flex;align-items:center;justify-content:space-between;
-padding:70px 9%;overflow:hidden
+    min-height:calc(100vh - 107px);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
 }
-.hero-text{max-width:600px}
-.small{
-color:#7ecbf2;font-size:10px;font-weight:bold;letter-spacing:3px
+
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.9) 0%,
+            rgba(0,0,0,.35) 42%,
+            rgba(0,0,0,.15) 100%
+        ),
+        url("IMG_3618.jpeg");
+
+    background-size:cover;
+    background-position:center;
 }
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:70px 8%;
+    width:100%;
+}
+
+.hero-small{
+    color:var(--blue);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
 .hero h1{
-font-size:clamp(65px,9vw,120px);line-height:.82;
-letter-spacing:-7px;margin:25px 0
-}
-.hero h1 span{color:#9bdcff}
-.hero p{
-color:#aab0b8;max-width:450px;line-height:1.7;font-size:14px
-}
-.btn{
-background:#fff;color:#08090b;border:0;padding:16px 24px;
-font-weight:bold;font-size:11px;letter-spacing:1px;margin-top:25px
-}
-.btn:hover{transform:translateY(-2px)}
-
-.hero-art{
-width:420px;height:420px;border-radius:50%;
-background:linear-gradient(135deg,#e1f6ff,#65b9e5);
-position:relative
-}
-.hero-card{
-position:absolute;width:250px;height:320px;
-background:
-linear-gradient(#0002,#0002),
-url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85")
-center/cover;
-left:85px;top:45px;transform:rotate(7deg);
-box-shadow:20px 25px 50px #0008
+    font-size:clamp(55px,9vw,125px);
+    line-height:.82;
+    letter-spacing:-7px;
+    font-weight:950;
+    text-transform:uppercase;
 }
 
-.features{
-background:#fff;display:grid;grid-template-columns:repeat(3,1fr);
-padding:25px 8%;border-bottom:1px solid #eee
-}
-.feature{text-align:center;border-right:1px solid #eee}
-.feature:last-child{border:0}
-.feature strong{display:block;font-size:12px}
-.feature span{display:block;color:#888;font-size:10px;margin-top:5px}
-
-.shop{padding:70px 7%}
-.shop-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}
-.shop-title h2{font-size:42px;letter-spacing:-3px;margin-top:8px}
-
-#search{
-width:100%;max-width:350px;padding:14px;
-border:1px solid #ddd;background:white;outline:none;
-margin-bottom:20px
+.hero h1 span{
+    color:var(--blue);
 }
 
-.categories{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px}
+.hero-description{
+    max-width:430px;
+    color:#ddd;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:28px;
+}
+
+.primary-btn{
+    padding:17px 25px;
+    border:0;
+    background:#fff;
+    color:#000;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.primary-btn:hover{
+    background:var(--blue);
+}
+
+.secondary-btn{
+    padding:17px 25px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    font-size:10px;
+    font-weight:900;
+}
+
+.secondary-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:#fff;
+    color:#000;
+}
+
+.info-box{
+    text-align:center;
+    padding:25px 10px;
+    border-right:1px solid #ddd;
+}
+
+.info-box:last-child{
+    border-right:0;
+}
+
+.info-box strong{
+    font-size:11px;
+}
+
+.info-box p{
+    margin-top:6px;
+    color:#777;
+    font-size:9px;
+}
+
+
+/* =========================
+   KOLEKSİYON
+========================= */
+
+.collection{
+    background:#f5f5f5;
+    color:#080808;
+    padding:80px 7%;
+}
+
+.section-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:30px;
+}
+
+.section-label{
+    font-size:9px;
+    letter-spacing:4px;
+    font-weight:900;
+    color:#777;
+}
+
+.section-title{
+    font-size:48px;
+    letter-spacing:-4px;
+    margin-top:8px;
+}
+
+.section-description{
+    max-width:330px;
+    color:#777;
+    font-size:11px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   KATEGORİLER
+========================= */
+
+.categories{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
 .categories button{
-background:white;border:1px solid #ddd;
-padding:10px 15px;font-size:9px;font-weight:bold
+    background:#fff;
+    border:1px solid #ddd;
+    padding:11px 16px;
+    font-size:9px;
+    font-weight:900;
 }
-.categories button.active{background:#08090b;color:white}
+
+.categories button.active,
+.categories button:hover{
+    background:#080808;
+    color:#fff;
+}
+
+
+/* =========================
+   ÜRÜNLER
+========================= */
 
 .products{
-display:grid;grid-template-columns:repeat(4,1fr);gap:25px
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
-.product{background:white}
-.product-img{height:370px;position:relative;overflow:hidden;background:#eee}
-.product-img img{
-width:100%;height:100%;object-fit:cover;transition:.4s
+
+.product{
+    background:#fff;
 }
-.product:hover img{transform:scale(1.05)}
-.badge{
-position:absolute;top:12px;left:12px;z-index:2;
-background:#08090b;color:#fff;padding:7px 10px;
-font-size:8px;font-weight:bold
+
+.product-image{
+    height:390px;
+    position:relative;
+    overflow:hidden;
+    background:#ddd;
 }
-.favorite{
-position:absolute;right:12px;top:12px;z-index:3;
-border:0;width:35px;height:35px;border-radius:50%;
-background:white;font-size:18px
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
 }
-.product-info{padding:15px 3px 20px}
-.product-info small{color:#888;font-size:9px}
-.product-info h3{font-size:13px;margin:7px 0}
-.price{font-size:13px;font-weight:bold}
-.old{
-color:#aaa;text-decoration:line-through;margin-left:7px;font-size:10px
+
+.product:hover img{
+    transform:scale(1.05);
 }
-.add{
-width:100%;background:#08090b;color:#fff;border:0;
-padding:13px;font-size:10px;font-weight:bold;margin-top:10px
+
+.product-tag{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#080808;
+    color:#fff;
+    padding:8px 10px;
+    font-size:8px;
+    font-weight:bold;
 }
-.add.disabled{
-background:#ddd;color:#888;cursor:not-allowed
+
+.product-info{
+    padding:16px;
 }
+
+.product-category{
+    color:#999;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.product-name{
+    font-size:13px;
+    margin:7px 0;
+    font-weight:800;
+}
+
+.price{
+    font-size:13px;
+    font-weight:900;
+}
+
+.old-price{
+    color:#aaa;
+    text-decoration:line-through;
+    font-size:10px;
+    margin-left:5px;
+}
+
+.add-btn{
+    width:100%;
+    border:0;
+    background:#080808;
+    color:white;
+    padding:13px;
+    margin-top:12px;
+    font-size:9px;
+    font-weight:900;
+}
+
+.add-btn:hover{
+    background:#78d7ff;
+    color:#000;
+}
+
+.add-btn.closed{
+    background:#ddd;
+    color:#888;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:500;
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+.cart{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    width:min(430px,94%);
+    background:#fff;
+    color:#000;
+    padding:28px;
+    overflow:auto;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+    padding-bottom:18px;
+}
+
+.cart-header button{
+    border:0;
+    background:none;
+    font-size:25px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+    width:70px;
+    height:85px;
+    object-fit:cover;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info strong{
+    font-size:11px;
+}
+
+.cart-item-info p{
+    margin-top:7px;
+    font-size:11px;
+}
+
+.quantity{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin-top:10px;
+}
+
+.quantity button{
+    width:25px;
+    height:25px;
+    background:#fff;
+    border:1px solid #ddd;
+}
+
+.cart-total{
+    padding-top:20px;
+}
+
+.total-line{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+    font-size:12px;
+}
+
+.checkout-button{
+    width:100%;
+    border:0;
+    background:#080808;
+    color:#fff;
+    padding:16px;
+    font-size:10px;
+    font-weight:900;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:#08090b;color:white;padding:55px 7% 25px
+    background:#080808;
+    padding:55px 7% 25px;
 }
-.footer-logo{font-size:28px;font-weight:900}
-.footer-logo span{color:#7ecbf2}
-footer p{color:#888;font-size:11px;margin-top:10px}
+
+.footer-logo{
+    font-size:28px;
+    font-weight:950;
+}
+
+.footer-logo span{
+    color:var(--blue);
+}
+
+.footer-text{
+    color:#777;
+    font-size:10px;
+    margin-top:10px;
+}
+
 .footer-bottom{
-margin-top:40px;border-top:1px solid #25272b;padding-top:20px;
-color:#777;font-size:9px;display:flex;justify-content:space-between
+    border-top:1px solid #222;
+    margin-top:40px;
+    padding-top:20px;
+    color:#666;
+    font-size:9px;
+    display:flex;
+    justify-content:space-between;
 }
 
-/* SEPET */
-.overlay{
-display:none;position:fixed;inset:0;background:#0008;z-index:100
-}
-.overlay.show{display:block}
-.cart{
-position:absolute;right:0;top:0;height:100%;width:min(430px,94%);
-background:#fff;padding:30px;overflow:auto
-}
-.cart-head{
-display:flex;justify-content:space-between;
-border-bottom:1px solid #eee;padding-bottom:20px
-}
-.close{border:0;background:none;font-size:26px}
-.cart-item{
-display:flex;gap:12px;padding:18px 0;border-bottom:1px solid #eee
-}
-.cart-item img{width:75px;height:90px;object-fit:cover}
-.cart-item-info{flex:1}
-.cart-item-info strong{font-size:12px}
-.cart-item-info p{font-size:11px;margin-top:7px}
-.qty{display:flex;gap:10px;align-items:center;margin-top:10px}
-.qty button{
-width:25px;height:25px;border:1px solid #ddd;background:#fff
-}
-.cart-total{padding-top:20px}
-.cart-total div{
-display:flex;justify-content:space-between;margin-bottom:15px
-}
-.checkout-btn{
-width:100%;background:#08090b;color:#fff;border:0;
-padding:16px;font-size:11px;font-weight:bold
-}
 
-/* CHECKOUT */
-.checkout{display:none;padding:60px 8%}
-.checkout.show{display:block}
-.checkout-grid{
-display:grid;grid-template-columns:1.2fr .8fr;gap:70px
-}
-.checkout h1{
-font-size:48px;letter-spacing:-3px;margin:10px 0 35px
-}
-.form-group{margin-bottom:18px}
-.form-group label{font-size:10px;font-weight:bold}
-input,textarea{
-width:100%;border:1px solid #ddd;padding:14px;
-margin-top:7px;background:white;outline:none
-}
-textarea{resize:vertical}
-
-.payment{
-margin-top:30px;border:1px solid #ddd;background:white
-}
-.payment-title{
-padding:18px;border-bottom:1px solid #eee;
-font-size:11px;font-weight:bold
-}
-.bank{padding:20px}
-.bank-label{
-font-size:8px;color:#888;font-weight:bold;margin-bottom:5px
-}
-.iban{font-weight:bold;font-size:13px;letter-spacing:.5px}
-.copy{
-border:0;background:none;font-size:9px;font-weight:bold;margin-top:10px
-}
-.warning{
-margin:0 20px 20px;background:#e0f5ff;
-border-left:3px solid #65bce9;padding:15px;
-font-size:11px;line-height:1.6
-}
-.warning strong{display:block;margin-bottom:5px}
-
-.summary{
-background:white;padding:25px;height:max-content
-}
-.summary h2{margin:8px 0 20px}
-.summary-product{
-display:flex;gap:10px;margin-bottom:15px
-}
-.summary-product img{width:55px;height:65px;object-fit:cover}
-.summary-product div{flex:1}
-.summary-product strong{font-size:10px}
-.summary-product span{
-display:block;font-size:9px;color:#888;margin-top:5px
-}
-.summary-line{
-border-top:1px solid #eee;padding-top:15px;margin-top:15px
-}
-.summary-line div{
-display:flex;justify-content:space-between;
-margin:9px 0;font-size:11px
-}
-.summary-line .total{font-size:17px;font-weight:bold}
-
-/* BAŞARILI */
-.success{
-display:none;min-height:70vh;padding:80px 20px;
-text-align:center;align-items:center;justify-content:center;
-flex-direction:column
-}
-.success.show{display:flex}
-.success-circle{
-width:70px;height:70px;border-radius:50%;background:#dff5ff;
-display:flex;align-items:center;justify-content:center;font-size:30px
-}
-.success h1{
-font-size:55px;letter-spacing:-4px;margin:15px 0
-}
-.order-box{
-background:white;border:1px solid #ddd;padding:20px 30px;margin:25px 0
-}
-.order-box small{display:block;font-size:8px;color:#888}
-.order-box strong{
-display:block;font-size:21px;margin-top:7px;letter-spacing:1px
-}
-.success p{
-color:#777;max-width:500px;line-height:1.6;font-size:12px
-}
+/* =========================
+   MOBİL
+========================= */
 
 @media(max-width:900px){
-nav{display:none}
-.hero{
-flex-direction:column;text-align:center;padding:60px 25px
-}
-.hero p{margin:auto}
-.hero-art{
-margin-top:60px;width:290px;height:290px
-}
-.hero-card{
-width:180px;height:230px;left:55px;top:30px
-}
-.features{grid-template-columns:1fr}
-.feature{
-border-right:0;border-bottom:1px solid #eee;padding:12px
-}
-.products{grid-template-columns:repeat(2,1fr)}
-.product-img{height:280px}
-.checkout-grid{grid-template-columns:1fr}
+
+    header{
+        height:65px;
+        padding:0 18px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:calc(100vh - 97px);
+    }
+
+    .hero-image{
+        background-position:center;
+    }
+
+    .hero-content{
+        padding:45px 22px;
+    }
+
+    .hero h1{
+        font-size:64px;
+        letter-spacing:-5px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .info-box{
+        border-right:0;
+        border-bottom:1px solid #ddd;
+    }
+
+    .collection{
+        padding:55px 18px;
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-title{
+        font-size:39px;
+    }
+
+    .section-description{
+        margin-top:15px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .product-image{
+        height:260px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        max-width:230px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
 }
 
+
 @media(max-width:500px){
-header{padding:0 18px}
-.shop{padding:50px 18px}
-.shop-title h2{font-size:32px}
-.products{gap:12px}
-.product-img{height:230px}
-.hero h1{font-size:65px}
-.checkout{padding:40px 18px}
-.checkout h1{font-size:38px}
+
+    .topbar{
+        font-size:8px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-image{
+        height:220px;
+    }
+
 }
+
+
+/* =========================
+   SATIŞ KAPALI MESAJI
+========================= */
+
+.sale-closed{
+    display:none;
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#fff;
+    color:#000;
+    padding:14px 20px;
+    z-index:800;
+    font-size:10px;
+    font-weight:bold;
+    box-shadow:0 10px 40px #0005;
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="top">
-    1.500 TL VE ÜZERİ SİPARİŞLERDE ÜCRETSİZ KARGO
+
+<div class="topbar">
+    YENİ SEZON 2026 · EGEDRIP
 </div>
+
 
 <header>
 
@@ -318,937 +721,763 @@ header{padding:0 18px}
     ege<span>Drip</span>
 </a>
 
+
 <nav>
-    <button onclick="filterProducts('Tümü')">TÜMÜ</button>
-    <button onclick="filterProducts('Tişört')">TİŞÖRT</button>
-    <button onclick="filterProducts('Sweatshirt')">SWEATSHIRT</button>
-    <button onclick="filterProducts('Pantolon')">PANTOLON</button>
-    <button onclick="filterProducts('Ayakkabı')">AYAKKABI</button>
-    <button onclick="filterProducts('Aksesuar')">AKSESUAR</button>
+
+<button onclick="goCollection()">
+    KOLEKSİYON
+</button>
+
+<button onclick="filterProducts('Tişört')">
+    TİŞÖRT
+</button>
+
+<button onclick="filterProducts('Sweatshirt')">
+    SWEATSHIRT
+</button>
+
+<button onclick="filterProducts('Pantolon')">
+    PANTOLON
+</button>
+
+<button onclick="filterProducts('Aksesuar')">
+    AKSESUAR
+</button>
+
 </nav>
 
-<div class="icons">
-    <button class="icon"
-    onclick="document.getElementById('search').focus()">⌕</button>
 
-    <button class="icon" onclick="openCart()">
-        🛍
-        <span class="cart-count" id="cartCount">0</span>
-    </button>
+<div class="header-right">
+
+<button class="header-btn"
+onclick="goCollection()">
+⌕
+</button>
+
+<button class="header-btn"
+onclick="openCart()">
+🛍
+<span class="cart-count" id="cartCount">0</span>
+</button>
+
 </div>
 
 </header>
 
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="hero-text">
+<div class="hero-image"></div>
 
-<div class="small">
-    EGEDRIP · NEW DROP 01
+
+<div class="hero-content">
+
+<div class="hero-small">
+    EGEDRIP · NEW SEASON 2026
 </div>
 
+
 <h1>
-    STREET<br>
-    <span>YOUR WAY.</span>
+    NEW<br>
+    <span>DROP.</span>
 </h1>
 
-<p>
-    Tarzını kendin yaz. Günlük hayat için tasarlanan
-    modern, rahat ve güçlü streetwear parçaları.
+
+<p class="hero-description">
+    Sokağın ruhundan ilham alan yeni egeDrip
+    koleksiyonu. Tarzını belirle, kendi yolunu çiz.
 </p>
 
-<button class="btn"
-onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
-    KOLEKSİYONU KEŞFET →
+
+<div class="hero-buttons">
+
+<button class="primary-btn"
+onclick="goCollection()">
+    YENİ SEZON KOLEKSİYONU →
+</button>
+
+<button class="secondary-btn"
+onclick="goCollection()">
+    ÜRÜNLERİ GÖR
 </button>
 
 </div>
 
-<div class="hero-art">
-    <div class="hero-card"></div>
 </div>
 
 </section>
 
 
-<section class="features">
 
-<div class="feature">
-<strong>🚚 HIZLI KARGO</strong>
-<span>1-3 iş gününde kargoda</span>
+<!-- INFO -->
+
+<section class="info">
+
+<div class="info-box">
+
+<strong>
+    ✦ YENİ SEZON
+</strong>
+
+<p>
+    2026 yeni koleksiyon
+</p>
+
 </div>
 
-<div class="feature">
-<strong>✓ GÜVENLİ ALIŞVERİŞ</strong>
-<span>EFT / Havale ödeme</span>
+
+<div class="info-box">
+
+<strong>
+    ⚡ STREETWEAR
+</strong>
+
+<p>
+    Günlük urban stil
+</p>
+
 </div>
 
-<div class="feature">
-<strong>✦ YENİ DROP'LAR</strong>
-<span>Düzenli olarak yeni ürünler</span>
+
+<div class="info-box">
+
+<strong>
+    ✓ GÜVENLİ ALIŞVERİŞ
+</strong>
+
+<p>
+    EFT / Havale ödeme
+</p>
+
 </div>
 
 </section>
 
 
-<main class="shop" id="shop">
 
-<div class="shop-title">
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+
+<div class="section-top">
 
 <div>
-<div class="small">EGEDRIP COLLECTION</div>
-<h2>Öne Çıkanlar</h2>
+
+<div class="section-label">
+    EGEDRIP COLLECTION
 </div>
+
+<h2 class="section-title">
+    Yeni Sezon.
+</h2>
 
 </div>
 
-<input
-id="search"
-type="text"
-placeholder="Ürün ara..."
-oninput="searchProducts()"
->
+
+<p class="section-description">
+    Streetwear kültüründen ilham alan,
+    rahat ve dikkat çekici parçalar.
+    Kendi drip'ini oluştur.
+</p>
+
+</div>
+
+
 
 <div class="categories">
 
-<button class="active" onclick="filterProducts('Tümü')">
-TÜMÜ
+<button class="active"
+onclick="filterProducts('Tümü')">
+    TÜMÜ
 </button>
 
 <button onclick="filterProducts('Tişört')">
-TİŞÖRT
+    TİŞÖRT
 </button>
 
 <button onclick="filterProducts('Sweatshirt')">
-SWEATSHIRT
+    SWEATSHIRT
 </button>
 
 <button onclick="filterProducts('Pantolon')">
-PANTOLON
-</button>
-
-<button onclick="filterProducts('Ayakkabı')">
-AYAKKABI
+    PANTOLON
 </button>
 
 <button onclick="filterProducts('Aksesuar')">
-AKSESUAR
+    AKSESUAR
 </button>
 
 </div>
 
+
+
 <div class="products" id="products"></div>
 
-</main>
+</section>
 
+
+
+<!-- FOOTER -->
 
 <footer>
 
 <div class="footer-logo">
-ege<span>Drip</span>
+    ege<span>Drip</span>
 </div>
 
-<p>
-Modern streetwear. Kendi tarzını oluştur.
+<p class="footer-text">
+    NEW SEASON · STREETWEAR · EGEDRIP
 </p>
 
+
 <div class="footer-bottom">
-<span>© 2026 egeDrip</span>
-<span>EFT / Havale ile ödeme</span>
+
+<span>
+    © 2026 egeDrip
+</span>
+
+<span>
+    EFT / Havale ile ödeme
+</span>
+
 </div>
 
 </footer>
 
 
-<!-- SEPET -->
+
+<!-- CART -->
 
 <div class="overlay" id="cartOverlay">
 
-<aside class="cart">
+<div class="cart">
 
-<div class="cart-head">
+<div class="cart-header">
 
 <div>
-<div class="small">SEPETİN</div>
-<h2>Sepetim</h2>
+
+<div class="section-label">
+    EGEDRIP
 </div>
 
-<button class="close" onclick="closeCart()">×</button>
+<h2>
+    Sepetim
+</h2>
 
 </div>
+
+<button onclick="closeCart()">
+    ×
+</button>
+
+</div>
+
 
 <div id="cartItems"></div>
 
+
 <div class="cart-total">
 
-<div>
-<span>Toplam</span>
-<strong id="cartTotal">₺0</strong>
+<div class="total-line">
+
+<span>
+    Toplam
+</span>
+
+<strong id="cartTotal">
+    ₺0
+</strong>
+
 </div>
 
-<button
-class="checkout-btn"
-onclick="goCheckout()">
-ÖDEMEYE GEÇ →
+
+<button class="checkout-button"
+onclick="checkout()">
+    ÖDEMEYE GEÇ →
 </button>
 
 </div>
 
-</aside>
-
-</div>
-
-
-<!-- CHECKOUT -->
-
-<section class="checkout" id="checkout">
-
-<button
-onclick="backShop()"
-style="border:0;background:none;font-weight:bold">
-← Alışverişe dön
-</button>
-
-<div class="checkout-grid">
-
-<div>
-
-<div class="small">
-ADIM 01 · SİPARİŞ BİLGİLERİ
-</div>
-
-<h1>Siparişi Tamamla</h1>
-
-<form onsubmit="createOrder(event)">
-
-<div class="form-group">
-<label>AD SOYAD</label>
-<input required placeholder="Adınız Soyadınız">
-</div>
-
-<div class="form-group">
-<label>TELEFON</label>
-<input required type="tel" placeholder="05XX XXX XX XX">
-</div>
-
-<div class="form-group">
-<label>E-POSTA</label>
-<input required type="email" placeholder="ornek@mail.com">
-</div>
-
-<div class="form-group">
-<label>ADRES</label>
-<textarea required rows="4"
-placeholder="Teslimat adresiniz"></textarea>
-</div>
-
-
-<div class="payment">
-
-<div class="payment-title">
-EFT / HAVALE
-</div>
-
-<div class="bank">
-
-<div class="bank-label">
-ALICI
-</div>
-
-<div style="font-weight:bold;font-size:13px;margin-bottom:20px">
-EVRİM FUATGİL
-</div>
-
-<div class="bank-label">
-IBAN
-</div>
-
-<div class="iban">
-TR11 0086 9000 0000 0260 7954 85
-</div>
-
-<button
-type="button"
-class="copy"
-onclick="copyIban()">
-📋 IBAN'I KOPYALA
-</button>
-
-</div>
-
-
-<div class="warning">
-
-<strong>⚠ ÖNEMLİ</strong>
-
-EFT / Havale işleminin açıklama kısmına
-<b>
-lütfen sipariş no eksiksiz şekilde yazınız.
-</b>
-
-<br>
-
-Sipariş numaranız sipariş oluşturulduktan sonra
-ekranda gösterilecektir.
-
 </div>
 
 </div>
 
 
-<button
-class="checkout-btn"
-type="submit"
-style="margin-top:20px">
-SİPARİŞİ OLUŞTUR →
-</button>
 
-</form>
-
+<div class="sale-closed" id="saleClosed">
+    Satışlar çok yakında başlayacak.
 </div>
 
-
-<aside class="summary">
-
-<div class="small">
-SİPARİŞ ÖZETİ
-</div>
-
-<h2>Ürünler</h2>
-
-<div id="summaryProducts"></div>
-
-<div class="summary-line">
-
-<div>
-<span>Ara toplam</span>
-<b id="summarySubtotal">₺0</b>
-</div>
-
-<div>
-<span>Kargo</span>
-<b id="summaryShipping">₺0</b>
-</div>
-
-<div class="total">
-<span>Toplam</span>
-<strong id="summaryTotal">₺0</strong>
-</div>
-
-</div>
-
-</aside>
-
-</div>
-
-</section>
-
-
-<!-- BAŞARILI -->
-
-<section class="success" id="success">
-
-<div class="success-circle">
-✓
-</div>
-
-<div class="small" style="margin-top:20px">
-SİPARİŞ ALINDI
-</div>
-
-<h1>Teşekkürler!</h1>
-
-<p>
-Siparişiniz başarıyla oluşturuldu.
-EFT / Havale işleminizi aşağıdaki
-sipariş numarasıyla tamamlayabilirsiniz.
-</p>
-
-<div class="order-box">
-
-<small>SİPARİŞ NUMARANIZ</small>
-
-<strong id="orderNumber"></strong>
-
-</div>
-
-<div style="
-background:#e0f5ff;
-padding:18px;
-max-width:520px;
-font-size:11px;
-line-height:1.7;
-margin-bottom:20px;
-">
-
-<b>
-EFT / Havale açıklama kısmına
-lütfen sipariş no eksiksiz şekilde yazınız.
-</b>
-
-<br><br>
-
-IBAN:
-<b>TR11 0086 9000 0000 0260 7954 85</b>
-
-<br>
-
-Alıcı:
-<b>EVRİM FUATGİL</b>
-
-</div>
-
-<button class="btn" onclick="backShop()">
-MAĞAZAYA DÖN →
-</button>
-
-</section>
 
 
 <script>
 
-/* =====================================================
-   EGEDRIP SATIŞ KONTROLÜ
 
-   ŞİMDİ:
-   false = satış kapalı
+/* ======================================
+   SATIŞ AYARI
 
-   ÜRÜNLERİN HAZIR OLDUĞUNDA:
-   true = satış açık
-   ===================================================== */
+   ŞİMDİ FALSE BIRAK.
+
+   ÜRÜNLER HAZIR OLDUĞUNDA:
+   false → true
+
+====================================== */
 
 const SATIS_ACIK = false;
 
 
-/* =====================================================
-   ÜRÜNLER
 
-   Daha sonra gerçek ürünlerini buraya ekleyebilirsin.
-   ===================================================== */
+/* ======================================
+   ÖRNEK ÜRÜNLER
+
+   Daha sonra bunları gerçek ürünlerinle
+   değiştireceğiz.
+====================================== */
 
 const products = [
 
 {
-id:1,
-name:"EGE Oversize Tee",
-category:"Tişört",
-price:649,
-old:799,
-badge:"ÇOK SATAN",
-image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
+    id:1,
+    name:"Drip Oversize Tee",
+    category:"Tişört",
+    price:699,
+    old:799,
+    tag:"NEW",
+    image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
 },
 
 {
-id:2,
-name:"Ice Blue Hoodie",
-category:"Sweatshirt",
-price:1299,
-old:1499,
-badge:"YENİ",
-image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=85"
+    id:2,
+    name:"Blue Street Hoodie",
+    category:"Sweatshirt",
+    price:1299,
+    old:1499,
+    tag:"DROP 01",
+    image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85"
 },
 
 {
-id:3,
-name:"Urban Cargo Pant",
-category:"Pantolon",
-price:1199,
-old:1399,
-badge:"TREND",
-image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85"
+    id:3,
+    name:"Urban Cargo",
+    category:"Pantolon",
+    price:1199,
+    old:1399,
+    tag:"TREND",
+    image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=85"
 },
 
 {
-id:4,
-name:"Midnight Hoodie",
-category:"Sweatshirt",
-price:1399,
-old:1599,
-badge:"",
-image:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=85"
+    id:4,
+    name:"Black Heavy Hoodie",
+    category:"Sweatshirt",
+    price:1399,
+    old:1599,
+    tag:"NEW",
+    image:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85"
 },
 
 {
-id:5,
-name:"Essential Cap",
-category:"Aksesuar",
-price:449,
-old:549,
-badge:"",
-image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=85"
+    id:5,
+    name:"Street Cap",
+    category:"Aksesuar",
+    price:449,
+    old:549,
+    tag:"",
+    image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85"
 },
 
 {
-id:6,
-name:"Daily Street Sneaker",
-category:"Ayakkabı",
-price:1899,
-old:2199,
-badge:"YENİ",
-image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85"
-},
-
-{
-id:7,
-name:"Heavyweight Sweat",
-category:"Sweatshirt",
-price:999,
-old:1199,
-badge:"",
-image:"https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=800&q=85"
-},
-
-{
-id:8,
-name:"Washed Denim",
-category:"Pantolon",
-price:1099,
-old:1299,
-badge:"",
-image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=85"
+    id:6,
+    name:"Urban Sneaker",
+    category:"Aksesuar",
+    price:1899,
+    old:2199,
+    tag:"DROP",
+    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
 }
 
 ];
 
 
 let cart=[];
-let selectedCategory="Tümü";
+let currentCategory="Tümü";
 
 
-function money(price){
 
-return new Intl.NumberFormat("tr-TR",{
-style:"currency",
-currency:"TRY",
-maximumFractionDigits:0
-}).format(price);
+function money(value){
+
+    return new Intl.NumberFormat("tr-TR",{
+        style:"currency",
+        currency:"TRY",
+        maximumFractionDigits:0
+    }).format(value);
 
 }
+
 
 
 function renderProducts(){
 
-const container=document.getElementById("products");
+    const container=
+        document.getElementById("products");
 
-const search=
-document.getElementById("search").value.toLowerCase();
-
-const list=products.filter(p=>{
-
-const categoryOK=
-selectedCategory==="Tümü" ||
-p.category===selectedCategory;
-
-const searchOK=
-p.name.toLowerCase().includes(search);
-
-return categoryOK && searchOK;
-
-});
+    container.innerHTML="";
 
 
-container.innerHTML=list.map(p=>`
+    const filtered=products.filter(product=>{
 
-<article class="product">
+        return currentCategory==="Tümü" ||
+               product.category===currentCategory;
 
-<div class="product-img">
+    });
 
-${p.badge ?
-`<span class="badge">${p.badge}</span>` : ""}
 
-<button class="favorite"
-onclick="favorite(${p.id})">
-♡
-</button>
+    filtered.forEach(product=>{
 
-<img src="${p.image}" alt="${p.name}">
+        const card=document.createElement("div");
 
-</div>
+        card.className="product";
 
-<div class="product-info">
 
-<small>${p.category}</small>
+        card.innerHTML=`
 
-<h3>${p.name}</h3>
+            <div class="product-image">
 
-<div class="price">
+                ${
+                    product.tag
+                    ?
+                    `<div class="product-tag">
+                        ${product.tag}
+                    </div>`
+                    :
+                    ""
+                }
 
-${money(p.price)}
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
-<span class="old">
-${money(p.old)}
-</span>
+            </div>
 
-</div>
 
-<button
-class="add ${SATIS_ACIK ? "" : "disabled"}"
-onclick="addToCart(${p.id})">
+            <div class="product-info">
 
-${SATIS_ACIK ? "SEPETE EKLE" : "YAKINDA SATIŞTA"}
+                <div class="product-category">
+                    ${product.category}
+                </div>
 
-</button>
+                <div class="product-name">
+                    ${product.name}
+                </div>
 
-</div>
+                <div class="price">
 
-</article>
+                    ${money(product.price)}
 
-`).join("");
+                    <span class="old-price">
+                        ${money(product.old)}
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="add-btn ${SATIS_ACIK ? "" : "closed"}"
+                    onclick="addToCart(${product.id})"
+                >
+
+                    ${
+                        SATIS_ACIK
+                        ?
+                        "SEPETE EKLE"
+                        :
+                        "YAKINDA SATIŞTA"
+                    }
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
 
 }
+
 
 
 function filterProducts(category){
 
-selectedCategory=category;
+    currentCategory=category;
 
-renderProducts();
+    renderProducts();
 
-document.getElementById("shop")
-.scrollIntoView({behavior:"smooth"});
-
-}
-
-
-function searchProducts(){
-
-renderProducts();
+    document
+        .getElementById("collection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
 
-function favorite(id){
 
-alert("Ürün favorilere eklendi ❤️");
+function goCollection(){
+
+    document
+        .getElementById("collection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
+
 
 
 function addToCart(id){
 
-if(!SATIS_ACIK){
+    if(!SATIS_ACIK){
 
-alert(
-"Satışlarımız henüz başlamadı. Çok yakında egeDrip'te!"
-);
+        const message=
+            document.getElementById("saleClosed");
 
-return;
+        message.style.display="block";
+
+        setTimeout(()=>{
+            message.style.display="none";
+        },2500);
+
+        return;
+    }
+
+
+    const product=
+        products.find(p=>p.id===id);
+
+
+    const existing=
+        cart.find(p=>p.id===id);
+
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            ...product,
+            qty:1
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
 
 }
 
-
-const product=products.find(p=>p.id===id);
-
-const existing=cart.find(p=>p.id===id);
-
-if(existing){
-
-existing.qty++;
-
-}else{
-
-cart.push({
-...product,
-qty:1
-});
-
-}
-
-updateCart();
-openCart();
-
-}
 
 
 function updateCart(){
 
-const count=
-cart.reduce((sum,p)=>sum+p.qty,0);
-
-document.getElementById("cartCount")
-.textContent=count;
-
-
-const items=
-document.getElementById("cartItems");
+    document
+        .getElementById("cartCount")
+        .textContent=
+        cart.reduce(
+            (total,item)=>total+item.qty,
+            0
+        );
 
 
-if(cart.length===0){
+    const container=
+        document.getElementById("cartItems");
 
-items.innerHTML=`
-<div style="
-padding:50px 0;
-text-align:center;
-color:#888">
-Sepetiniz boş.
-</div>
-`;
 
-}else{
+    if(cart.length===0){
 
-items.innerHTML=cart.map(p=>`
+        container.innerHTML=`
 
-<div class="cart-item">
+            <div style="
+                text-align:center;
+                padding:50px 0;
+                color:#999;
+                font-size:12px;
+            ">
+                Sepetiniz boş.
+            </div>
 
-<img src="${p.image}">
+        `;
 
-<div class="cart-item-info">
+    }else{
 
-<strong>${p.name}</strong>
+        container.innerHTML=
+            cart.map(item=>`
 
-<p>${money(p.price)}</p>
+                <div class="cart-item">
 
-<div class="qty">
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
 
-<button onclick="changeQty(${p.id},-1)">
-−
-</button>
+                    <div class="cart-item-info">
 
-<b>${p.qty}</b>
+                        <strong>
+                            ${item.name}
+                        </strong>
 
-<button onclick="changeQty(${p.id},1)">
-+
-</button>
+                        <p>
+                            ${money(item.price)}
+                        </p>
 
-</div>
+                        <div class="quantity">
 
-</div>
+                            <button
+                                onclick="changeQuantity(${item.id},-1)">
+                                −
+                            </button>
 
-</div>
+                            <b>
+                                ${item.qty}
+                            </b>
 
-`).join("");
+                            <button
+                                onclick="changeQuantity(${item.id},1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `).join("");
+
+    }
+
+
+    const total=
+        cart.reduce(
+            (sum,item)=>
+                sum+(item.price*item.qty),
+            0
+        );
+
+
+    document
+        .getElementById("cartTotal")
+        .textContent=money(total);
 
 }
 
 
-const total=
-cart.reduce((sum,p)=>sum+p.price*p.qty,0);
 
-document.getElementById("cartTotal")
-.textContent=money(total);
+function changeQuantity(id,change){
 
-}
+    const item=
+        cart.find(p=>p.id===id);
+
+    if(!item)return;
 
 
-function changeQty(id,amount){
+    item.qty+=change;
 
-const item=cart.find(p=>p.id===id);
 
-if(!item)return;
+    if(item.qty<=0){
 
-item.qty+=amount;
+        cart=
+            cart.filter(p=>p.id!==id);
 
-if(item.qty<=0){
+    }
 
-cart=cart.filter(p=>p.id!==id);
 
-}
-
-updateCart();
+    updateCart();
 
 }
+
 
 
 function openCart(){
 
-if(!SATIS_ACIK){
+    if(!SATIS_ACIK){
 
-alert(
-"Satışlarımız henüz başlamadı. Çok yakında egeDrip'te!"
-);
+        const message=
+            document.getElementById("saleClosed");
 
-return;
+        message.style.display="block";
+
+        setTimeout(()=>{
+            message.style.display="none";
+        },2500);
+
+        return;
+    }
+
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
 
 }
 
-document.getElementById("cartOverlay")
-.classList.add("show");
-
-}
 
 
 function closeCart(){
 
-document.getElementById("cartOverlay")
-.classList.remove("show");
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
 
 }
 
 
-function goCheckout(){
 
-if(!SATIS_ACIK){
+function checkout(){
 
-alert(
-"Satışlarımız henüz başlamadı."
-);
+    if(!SATIS_ACIK){
 
-return;
+        alert(
+            "Satışlar henüz başlamadı. Çok yakında!"
+        );
 
-}
+        return;
 
-if(cart.length===0){
+    }
 
-alert("Sepetiniz boş.");
 
-return;
+    if(cart.length===0){
 
-}
+        alert("Sepetiniz boş.");
 
-closeCart();
+        return;
 
-document.querySelector("header")
-.style.display="none";
+    }
 
-document.querySelector(".hero")
-.style.display="none";
 
-document.querySelector(".features")
-.style.display="none";
+    /*
+        BURAYA DAHA SONRA
+        GERÇEK SİPARİŞ / EFT-HAVALE
+        SİSTEMİNİ BAĞLAYACAĞIZ.
+    */
 
-document.querySelector(".shop")
-.style.display="none";
-
-document.querySelector("footer")
-.style.display="none";
-
-document.getElementById("checkout")
-.classList.add("show");
-
-renderSummary();
-
-window.scrollTo(0,0);
+    alert(
+        "Sipariş sistemi satışlar açıldığında aktif olacaktır."
+    );
 
 }
 
-
-function renderSummary(){
-
-const subtotal=
-cart.reduce((sum,p)=>sum+p.price*p.qty,0);
-
-const shipping=
-subtotal>=1500 ? 0 : 79;
-
-const total=subtotal+shipping;
-
-
-document.getElementById("summaryProducts")
-.innerHTML=cart.map(p=>`
-
-<div class="summary-product">
-
-<img src="${p.image}">
-
-<div>
-
-<strong>${p.name}</strong>
-
-<span>${p.qty} adet</span>
-
-</div>
-
-<b>${money(p.price*p.qty)}</b>
-
-</div>
-
-`).join("");
-
-
-document.getElementById("summarySubtotal")
-.textContent=money(subtotal);
-
-document.getElementById("summaryShipping")
-.textContent=
-shipping===0 ? "Ücretsiz" : money(shipping);
-
-document.getElementById("summaryTotal")
-.textContent=money(total);
-
-}
-
-
-function copyIban(){
-
-navigator.clipboard.writeText(
-"TR110086900000000260795485"
-);
-
-alert("IBAN kopyalandı.");
-
-}
-
-
-function createOrder(event){
-
-event.preventDefault();
-
-
-if(!SATIS_ACIK){
-
-alert(
-"Satışlarımız henüz başlamadı."
-);
-
-return;
-
-}
-
-
-const number=
-"EGE-" +
-new Date().getFullYear() +
-"-" +
-Math.floor(100000+Math.random()*900000);
-
-
-document.getElementById("orderNumber")
-.textContent=number;
-
-
-document.getElementById("checkout")
-.classList.remove("show");
-
-document.getElementById("success")
-.classList.add("show");
-
-
-cart=[];
-
-updateCart();
-
-window.scrollTo(0,0);
-
-}
-
-
-function backShop(){
-
-document.getElementById("checkout")
-.classList.remove("show");
-
-document.getElementById("success")
-.classList.remove("show");
-
-document.querySelector("header")
-.style.display="flex";
-
-document.querySelector(".hero")
-.style.display="flex";
-
-document.querySelector(".features")
-.style.display="grid";
-
-document.querySelector(".shop")
-.style.display="block";
-
-document.querySelector("footer")
-.style.display="block";
-
-window.scrollTo(0,0);
-
-}
 
 
 renderProducts();
