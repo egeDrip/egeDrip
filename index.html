@@ -3,224 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EGE DRIP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Mağaza</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #0c0c0c;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 20px 20px 20px;
-            text-align: center;
-        }
-
-        header {
-            width: 100%;
-            text-align: center;
-            padding-top: 10px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 500px;
-            margin: auto 0;
-        }
-
-        .main-title {
-            font-size: 2.7rem;
-            font-weight: 900;
-            line-height: 1.15;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
-
-        .description {
-            font-size: 1rem;
-            color: #999999;
-            line-height: 1.5;
-            margin-bottom: 35px;
-            max-width: 360px;
-            font-weight: 400;
-        }
-
-        .btn-koleksiyon {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px 36px;
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 4px;
-            border: none;
-        }
-
-        footer {
-            font-size: 0.8rem;
-            color: #444444;
-            padding-bottom: 10px;
-        } .hero-section {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-  min-height: 500px;
-  background-image: url('IMG_3618.jpeg');
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-  font-family: sans-serif;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg, 
-    rgba(0, 0, 0, 0.45) 0%, 
-    rgba(0, 0, 0, 0.3) 50%, 
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 20px;
-  max-width: 800px;
-}
-
-.hero-subtitle {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  margin-bottom: 12px;
-  color: #e0e0e0;
-  text-transform: uppercase;
-}
-
-.hero-title {
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 1.05;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-}
-
-.hero-title .highlight {
-  font-style: italic;
-  display: inline-block;
-  margin-top: 5px;
-}
-
-.hero-discount {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  margin-bottom: 30px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.hero-btn {
-  display: inline-block;
-  padding: 14px 40px;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 900;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    height: 75vh;
-  }
-  .hero-title {
-    font-size: 32px;
-  }
-  .hero-subtitle {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  .hero-discount {
-    font-size: 13px;
-  }
-  .hero-btn {
-    padding: 12px 30px;
-    font-size: 13px;
-  }
-}
-
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .product { border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+        .cart { margin-top: 20px; padding: 15px; background: #e9e9e9; border-radius: 5px; }
+        .btn { background: #28a745; color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; }
+        .btn-shopier { background: #007bff; color: white; border: none; padding: 10px 15px; text-decoration: none; display: inline-block; border-radius: 4px; margin-top: 10px; }
+        input, textarea, select { width: 100%; padding: 8px; margin: 5px 0 15px 0; box-sizing: border-box; }
+        .payment-box { display: none; margin-top: 15px; padding: 10px; border: 1px solid #ccc; background: #fff; }
     </style>
 </head>
 <body>
 
-    
-        <header>
-  <div class="logo">EGE DRIP</div>
-</header>
+<div class="container">
+    <h2>Ürünlerimiz</h2>
+    <div class="product">
+        <span>Örnek Ürün 1 - 100 TL</span>
+        <button class="btn" onclick="addToCart('Örnek Ürün 1', 100)">Sepete Ekle</button>
+    </div>
 
-         <section class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-subtitle">NEW SEASON / 2026</p>
-    <h1 class="hero-title">YENİ SEZON<br><span class="highlight">KOLEKSİYONU</span></h1>
-    <p class="hero-discount">Sokak modasının en özel parçaları ve sınırlı sayıdaki drop'lar çok yakında burada.</p>
-    <a href="#urunler" class="hero-btn">KOLEKSİYONU İNCELE</a>
-  </div>
-</section>
+    <div class="cart">
+        <h3>Sepetiniz</h3>
+        <ul id="cart-items"></ul>
+        <p><strong>Toplam: <span id="cart-total">0</span> TL</strong></p>
+    </div>
 
+    <h3>Sipariş ve Teslimat Bilgileri</h3>
+    <!-- Formspree Entegrasyon Alanı -->
+    <form id="orderForm" action="https://formspree.io/f/EPOSTA_KODUNUZ" method="POST">
+        <input type="hidden" name="Sipariş Detayı" id="form-cart-details">
+        <input type="hidden" name="Ödenecek Tutar" id="form-final-total">
+        <input type="hidden" name="Ödeme Yöntemi" id="form-payment-method">
 
-    <footer>
-        © 2026 egeDrip. Tüm hakları saklıdır.
-    </footer>
+        <label>Adınız Soyadınız:</label>
+        <input type="text" name="Ad Soyad" required>
+
+        <label>Telefon Numarası:</label>
+        <input type="tel" name="Telefon" required>
+
+        <label>Teslimat Adresi:</label>
+        <textarea name="Adres" rows="3" placeholder="İl, İlçe, Mahalle, Cadde, Sokak, Bina No, Daire No..." required></textarea>
+
+        <h3>Ödeme Yöntemi Seçin</h3>
+        <label>
+            <input type="radio" name="payment" value="eft" onclick="togglePayment('eft')"> 
+            EFT / Havale (%15 İndirimli)
+        </label><br>
+        <label>
+            <input type="radio" name="payment" value="shopier" onclick="togglePayment('shopier')"> 
+            Kredi Kartı / Banka Kartı (Shopier)
+        </label>
+
+        <!-- EFT Bilgi Kutusu -->
+        <div id="eft-box" class="payment-box">
+            <p style="color: #28a745; font-weight: bold;">%15 EFT İndirimi Uygulandı!</p>
+            <p>Orijinal Tutar: <span style="text-decoration: line-through; color:#777;" id="raw-total">0 TL</span></p>
+            <p>Ödenecek İndirimli Tutar: <strong style="color: #28a745;" id="discount-total">0 TL</strong></p>
+            <hr>
+            <p style="margin: 5px 0; font-size: 13px;"><strong>Paycell IBAN:</strong> TR11 0086 9000 0000 0260 7954 85</p>
+            <p style="margin: 5px 0; font-size: 13px;"><strong>Alıcı:</strong> EVRİM FUATGİL</p>
+            <p style="font-size: 12px; color: #555;">Lütfen banka açıklama kısmına <span id="note-code" style="font-weight: bold; color: #d9534f;"></span> kodunu yazınız.</p>
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Siparişi Tamamla</button>
+        </div>
+
+        <!-- Shopier Bilgi Kutusu -->
+        <div id="shopier-box" class="payment-box">
+            <p>Ödenecek Tutar: <strong id="shopier-total" style="font-size: 18px;">0 TL</strong></p>
+            <p style="font-size: 12px; color: #666;">Shopier altyapısıyla 3D Secure güvenli ödeme.</p>
+            <a href="#" id="shopier-link" target="_blank" class="btn-shopier">Daha Güvenli Ödeme Yap</a>
+            <p style="font-size: 11px; color: #888; margin-top: 5px;">*Ödemeyi yaptıktan sonra aşağıdaki butona basarak siparişinizi onaylayın.</p>
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Siparişi Bildir ve Tamamla</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    let cart = [];
+    let orderCode = "SIP-" + Math.floor(100000 + Math.random() * 900000);
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartList = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        cartList.innerHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = `${item.name} - ${item.price} TL`;
+            cartList.appendChild(li);
+            total += item.price;
+        });
+
+        cartTotal.textContent = total;
+        document.getElementById('raw-total').textContent = total + " TL";
+        document.getElementById('discount-total').textContent = (total * 0.85).toFixed(2) + " TL";
+        document.getElementById('shopier-total').textContent = total + " TL";
+        document.getElementById('note-code').textContent = orderCode;
+
+        document.getElementById('form-cart-details').value = JSON.stringify(cart);
+    }
+
+    function togglePayment(type) {
+        document.getElementById('eft-box').style.display = type === 'eft' ? 'block' : 'none';
+        document.getElementById('shopier-box').style.display = type === 'shopier' ? 'block' : 'none';
+        document.getElementById('form-payment-method').value = type;
+
+        let currentTotal = parseFloat(document.getElementById('cart-total').textContent);
+        if (type === 'eft') {
+            document.getElementById('form-final-total').value = (currentTotal * 0.85).toFixed(2) + " TL (EFT İndirimli)";
+        } else {
+            document.getElementById('form-final-total').value = currentTotal + " TL";
+        }
+    }
+</script>
 
 </body>
 </html>
+
+
 
 
 
