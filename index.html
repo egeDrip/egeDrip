@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EgeDrip - Yeni Sezon</title>
+    <title>egeDrip | Official Store</title>
     <style>
         :root {
             --bg-color: #050505;
@@ -14,64 +14,50 @@
             --border-color: #27272a;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.5; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        /* Top Bar */
         .top-bar {
-            background-color: #22c55e; /* Görseldeki yeşil tonu */
+            background-color: #22c55e;
             color: #000;
             text-align: center;
             padding: 8px;
             font-weight: 800;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Header / Navigation */
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo-box {
-            font-size: 2.5rem;
-            font-weight: 900;
-            border: 2px solid var(--accent-color);
-            padding: 2px 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px var(--accent-color);
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-img {
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .cart-icon-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            background: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            padding: 2px 7px;
+            font-size: 0.75rem;
+            margin-left: 5px;
         }
 
         /* Hero Section */
@@ -83,275 +69,289 @@
         }
 
         .hero h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            line-height: 1.3;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .btn-main {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #fff;
+            color: #000;
             font-weight: 800;
-            padding: 14px 40px;
+            padding: 14px 35px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 1rem;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            transition: transform 0.2s;
+            display: inline-block;
             cursor: pointer;
             border: none;
-        }
-
-        .btn-main:hover {
-            transform: scale(1.03);
+            text-transform: uppercase;
         }
 
         /* Products Section */
         .products-section {
+            display: none;
             padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-        }
-
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
             text-align: center;
-            position: relative;
+            transition: border-color 0.3s;
         }
 
-        .product-image-box {
-            width: 100%;
-            height: 260px;
-            background-color: #1a1a1a;
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 15px;
+        .product-card:hover {
+            border-color: var(--accent-color);
         }
 
-        .product-image-box img {
+        .product-card img {
             width: 100%;
-            height: 100%;
+            height: 320px;
             object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
-        .status-badge {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.85);
-            color: #fff;
-            padding: 8px 14px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            border-radius: 4px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
-        .price-main {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-
-        .price-sub {
-            font-size: 0.75rem;
+        .price-tag {
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-top: 2px;
+            margin-bottom: 12px;
         }
 
-        /* Modal (Ödeme Ekranı) */
-        .modal-overlay {
+        .price-tag strong {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .btn-add-cart {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Modal / Sepet */
+        .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
             justify-content: center;
             align-items: center;
             padding: 20px;
+            z-index: 100;
         }
 
         .modal-content {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border: 1px solid var(--accent-color);
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
             max-width: 450px;
             width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
             position: relative;
-            text-align: center;
         }
 
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 10px; right: 15px;
             font-size: 1.5rem;
-            color: #fff;
             cursor: pointer;
         }
 
-        .iban-details {
-            background-color: #000;
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            background: #000;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        .iban-info {
+            background: #000;
             border: 1px dashed var(--accent-color);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: left;
-            font-size: 0.95rem;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.9rem;
         }
 
-        .iban-details p {
-            margin-bottom: 8px;
-        }
-
-        .iban-details strong {
-            color: var(--accent-color);
-        }
-
-        .payment-note {
+        .note {
             font-size: 0.8rem;
             color: #facc15;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
+        .step { display: none; }
+        .step.active { display: block; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        🔥 EFT/HAVALE ÜZERİNDEN %10 İNDİRİM 🔥
-    </div>
+    <div class="top-bar">🔥 EFT/HAVALE ÜZERİNDEN %10 İNDİRİM 🔥</div>
 
     <header>
-        <div class="logo-box">ED</div>
-        <nav>
-            <ul>
-                <li><a href="#">GİRİŞ</a></li>
-                <li><a href="#">YENİ SEZON</a></li>
-                <li><a href="#koleksiyon">KOLEKSİYON</a></li>
-                <li><a href="#" onclick="openModal()">İLETİŞİM</a></li>
-            </ul>
-        </nav>
+        <!-- egeDrip LOGO -->
+        <img src="logo.png" alt="egeDrip" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50/000/fff?text=egeDrip'">
+        
+        <button class="cart-icon-btn" onclick="openCart()">
+            🛒 Sepet <span class="cart-count" id="cartCount">0</span>
+        </button>
     </header>
 
-    <main>
-        <!-- KARŞILAMA EKRANI -->
-        <section class="hero">
-            <h1>YENİ SEZON ÜRÜNLER, YENİ SEZON DRIP MODELLERİ SINIRLI SAYIDA ÇOK YAKINDA BURADA.</h1>
-            <a href="#koleksiyon" class="btn-main">ALIŞVERİŞE BAŞLA</a>
-        </section>
+    <!-- KARŞILAMA EKRANI -->
+    <section class="hero" id="heroSection">
+        <h1>YENİ SEZON ÜRÜNLER, YENİ SEZON DRIP MODELLERİ SINIRLI SAYIDA ÇOK YAKINDA BURADA.</h1>
+        <button class="btn-main" onclick="startShopping()">ALIŞVERİŞE BAŞLA</button>
+    </section>
 
-        <!-- ÜRÜNLER -->
-        <section class="products-section" id="koleksiyon">
-            <h2 class="section-title">Öne Çıkanlar</h2>
+    <!-- ÜRÜN EKRANI -->
+    <section class="products-section" id="productsSection">
+        <h2 style="margin-bottom: 20px; text-transform: uppercase;">Öne Çıkanlar</h2>
+        <div class="product-grid">
             
-            <div class="product-grid">
-                <!-- ÜRÜN 1 -->
-                <div class="product-card">
-                    <div class="product-image-box">
-                        <img src="https://via.placeholder.com/300x400/111/fff?text=Model+1" alt="Model 1">
-                        <button class="status-badge" onclick="openModal()">YAKINDA SATIŞTA</button>
-                    </div>
-                    <div class="price-main">1200 TL</div>
-                    <div class="price-sub">EFT FİYATI: 1080 TL</div>
-                </div>
-
-                <!-- ÜRÜN 2 -->
-                <div class="product-card">
-                    <div class="product-image-box">
-                        <img src="https://via.placeholder.com/300x400/111/fff?text=Model+2" alt="Model 2">
-                        <button class="status-badge" onclick="openModal()">YAKINDA SATIŞTA</button>
-                    </div>
-                    <div class="price-main">1200 TL</div>
-                    <div class="price-sub">EFT FİYATI: 1080 TL</div>
-                </div>
-
-                <!-- ÜRÜN 3 -->
-                <div class="product-card">
-                    <div class="product-image-box">
-                        <img src="https://via.placeholder.com/300x400/111/fff?text=Model+3" alt="Model 3">
-                        <button class="status-badge" onclick="openModal()">YAKINDA SATIŞTA</button>
-                    </div>
-                    <div class="price-main">1200 TL</div>
-                    <div class="price-sub">EFT FİYATI: 1080 TL</div>
-                </div>
+            <!-- ÜRÜN 1 -->
+            <div class="product-card">
+                <img src="urun1.jpg" alt="Drip Tech Suit Black/Red" onerror="this.src='https://via.placeholder.com/300x400/111/fff?text=Drip+Tech+1'">
+                <div class="product-title">Drip Tech Suit Black/Red</div>
+                <div class="price-tag">1200 TL (EFT Özel: <strong>1080 TL</strong>)</div>
+                <button class="btn-add-cart" onclick="addToCart('Drip Tech Suit Black/Red', 1080)">Sepete Ekle</button>
             </div>
-        </section>
-    </main>
 
-    <!-- ÖDEME BİLGİLERİ PENCERESİ (MODAL) -->
-    <div class="modal-overlay" id="paymentModal">
+            <!-- ÜRÜN 2 -->
+            <div class="product-card">
+                <img src="urun2.jpg" alt="Red Drip Tracksuit Set" onerror="this.src='https://via.placeholder.com/300x400/111/fff?text=Drip+Tech+2'">
+                <div class="product-title">Red Drip Tracksuit Set</div>
+                <div class="price-tag">1200 TL (EFT Özel: <strong>1080 TL</strong>)</div>
+                <button class="btn-add-cart" onclick="addToCart('Red Drip Tracksuit Set', 1080)">Sepete Ekle</button>
+            </div>
+
+            <!-- ÜRÜN 3 -->
+            <div class="product-card">
+                <img src="urun3.jpg" alt="Drip Masked Hoodie Edition" onerror="this.src='https://via.placeholder.com/300x400/111/fff?text=Drip+Hoodie+3'">
+                <div class="product-title">Drip Masked Hoodie Edition</div>
+                <div class="price-tag">1200 TL (EFT Özel: <strong>1080 TL</strong>)</div>
+                <button class="btn-add-cart" onclick="addToCart('Drip Masked Hoodie Edition', 1080)">Sepete Ekle</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEPET / ADRES / ÖDEME MODAL -->
+    <div class="modal" id="cartModal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 style="margin-bottom: 10px; text-transform: uppercase;">EFT / Havale Ödeme Bilgileri</h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">Ürünler çok yakında stokta olacaktır. Ön sipariş ve detaylı bilgi için ödeme bilgilerimiz:</p>
-            
-            <div class="iban-details">
-                <p><strong>Alıcı:</strong> EVRİM FUATGİL</p>
-                <p><strong>IBAN:</strong> TR11 0086 9000 0000 0260 7954 85</p>
-                <p><strong>E-posta:</strong> egedripp0@gmail.com</p>
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+
+            <!-- ADIM 1: SEPET -->
+            <div class="step active" id="step1">
+                <h3>Sepetiniz</h3>
+                <ul id="cartItems" style="margin: 15px 0; list-style: none;"></ul>
+                <p style="margin-bottom: 15px;"><strong>Toplam Tutar (EFT İndirimli):</strong> <span id="totalPrice">0</span> TL</p>
+                <button class="btn-add-cart" onclick="goToStep(2)">Alışverişi Tamamla</button>
             </div>
 
-            <p class="payment-note">⚠️ Lütfen ödeme yaparken transfer açıklama kısmına sipariş no veya ürün adını yazınız.</p>
+            <!-- ADIM 2: ADRES -->
+            <div class="step" id="step2">
+                <h3>Teslimat Bilgileri</h3>
+                <input type="text" id="fullName" placeholder="Ad Soyad">
+                <input type="tel" id="phone" placeholder="Telefon Numarası">
+                <textarea id="address" placeholder="Açık Adres"></textarea>
+                <button class="btn-add-cart" onclick="goToStep(3)">EFT / Havale ile İlerle</button>
+            </div>
+
+            <!-- ADIM 3: ÖDEME BİLGİLERİ -->
+            <div class="step" id="step3">
+                <h3>Ödeme Bilgileri</h3>
+                <div class="iban-info">
+                    <p><strong>Alıcı:</strong> EVRİM FUATGİL</p>
+                    <p><strong>IBAN:</strong> TR11 0086 9000 0000 0260 7954 85</p>
+                    <p><strong>E-posta:</strong> egedripp0@gmail.com</p>
+                </div>
+                <p class="note">⚠️ Lütfen ödeme yaparken transfer açıklama kısmına Ad-Soyad ve Sipariş Notunuzu yazınız.</p>
+                <button class="btn-add-cart" style="background:#22c55e; margin-top:15px;" onclick="completeOrder()">Siparişi Tamamla</button>
+            </div>
+
+            <!-- ADIM 4: SİPARİŞ ONAYI -->
+            <div class="step" id="step4">
+                <h2 style="color: #22c55e;">Sipariş Oluşturuldu! 🎉</h2>
+                <p style="margin-top: 10px; font-size:0.9rem;">Ödemenizi yaptıktan sonra dekontu e-posta adresimize iletebilirsiniz. Siparişiniz kontrol edilip kargoya verilecektir.</p>
+                <button class="btn-main" style="width:100%; margin-top:20px;" onclick="closeCart()">Kapat</button>
+            </div>
+
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 EgeDrip. Tüm Hakları Saklıdır.</p>
-    </footer>
-
     <script>
-        function openModal() {
-            document.getElementById('paymentModal').style.display = 'flex';
+        let cart = [];
+
+        function startShopping() {
+            document.getElementById('productsSection').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('productsSection').offsetTop, behavior: 'smooth' });
         }
 
-        function closeModal() {
-            document.getElementById('paymentModal').style.display = 'none';
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            updateCart();
+            openCart();
         }
 
-        // Dışarı tıklandığında kapatma
-        window.onclick = function(event) {
-            var modal = document.getElementById('paymentModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+        function updateCart() {
+            document.getElementById('cartCount').innerText = cart.length;
+            let list = document.getElementById('cartItems');
+            let total = 0;
+            list.innerHTML = '';
+            cart.forEach((item) => {
+                list.innerHTML += `<li style="padding: 5px 0; border-bottom: 1px solid #222;">${item.title} - <strong>${item.price} TL</strong></li>`;
+                total += item.price;
+            });
+            document.getElementById('totalPrice').innerText = total;
+        }
+
+        function openCart() {
+            document.getElementById('cartModal').style.display = 'flex';
+            goToStep(1);
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function goToStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + stepNumber).classList.add('active');
+        }
+
+        function completeOrder() {
+            cart = [];
+            updateCart();
+            goToStep(4);
         }
     </script>
 </body>
