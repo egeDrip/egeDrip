@@ -1,1496 +1,277 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>egeDrip — Yeni Sezon</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#080808;
-    color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-button{
-    font-family:inherit;
-    cursor:pointer;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-
-/* =========================
-   AYARLAR
-========================= */
-
-:root{
-    --blue:#78d7ff;
-    --light:#eefaff;
-    --black:#080808;
-    --gray:#999;
-}
-
-
-/* =========================
-   ÜST BİLGİ
-========================= */
-
-.topbar{
-    height:32px;
-    background:#78d7ff;
-    color:#050505;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.5px;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    height:75px;
-    padding:0 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#080808;
-    border-bottom:1px solid #202020;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-size:27px;
-    font-weight:950;
-    letter-spacing:-2px;
-}
-
-.logo span{
-    color:var(--blue);
-}
-
-nav{
-    display:flex;
-    gap:28px;
-}
-
-nav button{
-    background:none;
-    color:white;
-    border:0;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-nav button:hover{
-    color:var(--blue);
-}
-
-.header-right{
-    display:flex;
-    gap:8px;
-}
-
-.header-btn{
-    width:40px;
-    height:40px;
-    border:1px solid #282828;
-    background:#101010;
-    color:white;
-    border-radius:50%;
-    font-size:17px;
-}
-
-.header-btn:hover{
-    background:#fff;
-    color:#000;
-}
-
-.cart-count{
-    position:absolute;
-    margin-left:-12px;
-    margin-top:-5px;
-    background:var(--blue);
-    color:#000;
-    width:17px;
-    height:17px;
-    border-radius:50%;
-    font-size:9px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:calc(100vh - 107px);
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:flex-end;
-}
-
-.hero-image{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.9) 0%,
-            rgba(0,0,0,.35) 42%,
-            rgba(0,0,0,.15) 100%
-        ),
-        url("IMG_3618.jpeg");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    padding:70px 8%;
-    width:100%;
-}
-
-.hero-small{
-    color:var(--blue);
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:4px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(55px,9vw,125px);
-    line-height:.82;
-    letter-spacing:-7px;
-    font-weight:950;
-    text-transform:uppercase;
-}
-
-.hero h1 span{
-    color:var(--blue);
-}
-
-.hero-description{
-    max-width:430px;
-    color:#ddd;
-    font-size:13px;
-    line-height:1.7;
-    margin-top:25px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:10px;
-    margin-top:28px;
-}
-
-.primary-btn{
-    padding:17px 25px;
-    border:0;
-    background:#fff;
-    color:#000;
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:1px;
-}
-
-.primary-btn:hover{
-    background:var(--blue);
-}
-
-.secondary-btn{
-    padding:17px 25px;
-    border:1px solid #fff;
-    background:transparent;
-    color:#fff;
-    font-size:10px;
-    font-weight:900;
-}
-
-.secondary-btn:hover{
-    background:#fff;
-    color:#000;
-}
-
-
-/* =========================
-   INFO
-========================= */
-
-.info{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    background:#fff;
-    color:#000;
-}
-
-.info-box{
-    text-align:center;
-    padding:25px 10px;
-    border-right:1px solid #ddd;
-}
-
-.info-box:last-child{
-    border-right:0;
-}
-
-.info-box strong{
-    font-size:11px;
-}
-
-.info-box p{
-    margin-top:6px;
-    color:#777;
-    font-size:9px;
-}
-
-
-/* =========================
-   KOLEKSİYON
-========================= */
-
-.collection{
-    background:#f5f5f5;
-    color:#080808;
-    padding:80px 7%;
-}
-
-.section-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    margin-bottom:30px;
-}
-
-.section-label{
-    font-size:9px;
-    letter-spacing:4px;
-    font-weight:900;
-    color:#777;
-}
-
-.section-title{
-    font-size:48px;
-    letter-spacing:-4px;
-    margin-top:8px;
-}
-
-.section-description{
-    max-width:330px;
-    color:#777;
-    font-size:11px;
-    line-height:1.6;
-}
-
-
-/* =========================
-   KATEGORİLER
-========================= */
-
-.categories{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
-}
-
-.categories button{
-    background:#fff;
-    border:1px solid #ddd;
-    padding:11px 16px;
-    font-size:9px;
-    font-weight:900;
-}
-
-.categories button.active,
-.categories button:hover{
-    background:#080808;
-    color:#fff;
-}
-
-
-/* =========================
-   ÜRÜNLER
-========================= */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.product{
-    background:#fff;
-}
-
-.product-image{
-    height:390px;
-    position:relative;
-    overflow:hidden;
-    background:#ddd;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.product:hover img{
-    transform:scale(1.05);
-}
-
-.product-tag{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#080808;
-    color:#fff;
-    padding:8px 10px;
-    font-size:8px;
-    font-weight:bold;
-}
-
-.product-info{
-    padding:16px;
-}
-
-.product-category{
-    color:#999;
-    font-size:8px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.product-name{
-    font-size:13px;
-    margin:7px 0;
-    font-weight:800;
-}
-
-.price{
-    font-size:13px;
-    font-weight:900;
-}
-
-.old-price{
-    color:#aaa;
-    text-decoration:line-through;
-    font-size:10px;
-    margin-left:5px;
-}
-
-.add-btn{
-    width:100%;
-    border:0;
-    background:#080808;
-    color:white;
-    padding:13px;
-    margin-top:12px;
-    font-size:9px;
-    font-weight:900;
-}
-
-.add-btn:hover{
-    background:#78d7ff;
-    color:#000;
-}
-
-.add-btn.closed{
-    background:#ddd;
-    color:#888;
-}
-
-
-/* =========================
-   CART
-========================= */
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:500;
-    display:none;
-}
-
-.overlay.active{
-    display:block;
-}
-
-.cart{
-    position:absolute;
-    right:0;
-    top:0;
-    height:100%;
-    width:min(430px,94%);
-    background:#fff;
-    color:#000;
-    padding:28px;
-    overflow:auto;
-}
-
-.cart-header{
-    display:flex;
-    justify-content:space-between;
-    border-bottom:1px solid #ddd;
-    padding-bottom:18px;
-}
-
-.cart-header button{
-    border:0;
-    background:none;
-    font-size:25px;
-}
-
-.cart-item{
-    display:flex;
-    gap:12px;
-    padding:18px 0;
-    border-bottom:1px solid #eee;
-}
-
-.cart-item img{
-    width:70px;
-    height:85px;
-    object-fit:cover;
-}
-
-.cart-item-info{
-    flex:1;
-}
-
-.cart-item-info strong{
-    font-size:11px;
-}
-
-.cart-item-info p{
-    margin-top:7px;
-    font-size:11px;
-}
-
-.quantity{
-    display:flex;
-    gap:8px;
-    align-items:center;
-    margin-top:10px;
-}
-
-.quantity button{
-    width:25px;
-    height:25px;
-    background:#fff;
-    border:1px solid #ddd;
-}
-
-.cart-total{
-    padding-top:20px;
-}
-
-.total-line{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:18px;
-    font-size:12px;
-}
-
-.checkout-button{
-    width:100%;
-    border:0;
-    background:#080808;
-    color:#fff;
-    padding:16px;
-    font-size:10px;
-    font-weight:900;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#080808;
-    padding:55px 7% 25px;
-}
-
-.footer-logo{
-    font-size:28px;
-    font-weight:950;
-}
-
-.footer-logo span{
-    color:var(--blue);
-}
-
-.footer-text{
-    color:#777;
-    font-size:10px;
-    margin-top:10px;
-}
-
-.footer-bottom{
-    border-top:1px solid #222;
-    margin-top:40px;
-    padding-top:20px;
-    color:#666;
-    font-size:9px;
-    display:flex;
-    justify-content:space-between;
-}
-
-
-/* =========================
-   MOBİL
-========================= */
-
-@media(max-width:900px){
-
-    header{
-        height:65px;
-        padding:0 18px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        min-height:calc(100vh - 97px);
-    }
-
-    .hero-image{
-        background-position:center;
-    }
-
-    .hero-content{
-        padding:45px 22px;
-    }
-
-    .hero h1{
-        font-size:64px;
-        letter-spacing:-5px;
-    }
-
-    .hero-description{
-        font-size:12px;
-    }
-
-    .info{
-        grid-template-columns:1fr;
-    }
-
-    .info-box{
-        border-right:0;
-        border-bottom:1px solid #ddd;
-    }
-
-    .collection{
-        padding:55px 18px;
-    }
-
-    .section-top{
-        display:block;
-    }
-
-    .section-title{
-        font-size:39px;
-    }
-
-    .section-description{
-        margin-top:15px;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .product-image{
-        height:260px;
-    }
-
-    .product-info{
-        padding:12px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        max-width:230px;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-        gap:10px;
-    }
-}
-
-
-@media(max-width:500px){
-
-    .topbar{
-        font-size:8px;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    .hero h1{
-        font-size:55px;
-    }
-
-    .products{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .product-image{
-        height:220px;
-    }
-
-}
-
-
-/* =========================
-   SATIŞ KAPALI MESAJI
-========================= */
-
-.sale-closed{
-    display:none;
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translateX(-50%);
-    background:#fff;
-    color:#000;
-    padding:14px 20px;
-    z-index:800;
-    font-size:10px;
-    font-weight:bold;
-    box-shadow:0 10px 40px #0005;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGEDRIPP | Streetwear & Drip Culture</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --accent-color: #a855f7; /* Neon Mor */
+            --text-color: #ffffff;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Banner */
+        .top-banner {
+            background: linear-gradient(90deg, #7e22ce, var(--accent-color));
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        /* Products Section */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .eft-price {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Payment / IBAN Section */
+        .checkout-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        .iban-box {
+            background-color: #000;
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .iban-details {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .iban-details strong {
+            color: var(--accent-color);
+        }
+
+        /* Küçük Ekstra Açıklama Notu */
+        .payment-note {
+            font-size: 0.85rem;
+            color: #facc15; /* Dikkat çekici sarı/altın tonu */
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-
-
 <body>
 
-
-<div class="topbar">
-    YENİ SEZON 2026 · EGEDRIP
-</div>
-
-
-<header>
-
-<a href="#" class="logo">
-    ege<span>Drip</span>
-</a>
-
-
-<nav>
-
-<button onclick="goCollection()">
-    KOLEKSİYON
-</button>
-
-<button onclick="filterProducts('Tişört')">
-    TİŞÖRT
-</button>
-
-<button onclick="filterProducts('Sweatshirt')">
-    SWEATSHIRT
-</button>
-
-<button onclick="filterProducts('Pantolon')">
-    PANTOLON
-</button>
-
-<button onclick="filterProducts('Aksesuar')">
-    AKSESUAR
-</button>
-
-</nav>
-
-
-<div class="header-right">
-
-<button class="header-btn"
-onclick="goCollection()">
-⌕
-</button>
-
-<button class="header-btn"
-onclick="openCart()">
-🛍
-<span class="cart-count" id="cartCount">0</span>
-</button>
-
-</div>
-
-</header>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-image"></div>
-
-
-<div class="hero-content">
-
-<div class="hero-small">
-    EGEDRIP · NEW SEASON 2026
-</div>
-
-
-<h1>
-    NEW<br>
-    <span>DROP.</span>
-</h1>
-
-
-<p class="hero-description">
-    Sokağın ruhundan ilham alan yeni egeDrip
-    koleksiyonu. Tarzını belirle, kendi yolunu çiz.
-</p>
-
-
-<div class="hero-buttons">
-
-<button class="primary-btn"
-onclick="goCollection()">
-    YENİ SEZON KOLEKSİYONU →
-</button>
-
-<button class="secondary-btn"
-onclick="goCollection()">
-    ÜRÜNLERİ GÖR
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- INFO -->
-
-<section class="info">
-
-<div class="info-box">
-
-<strong>
-    ✦ YENİ SEZON
-</strong>
-
-<p>
-    2026 yeni koleksiyon
-</p>
-
-</div>
-
-
-<div class="info-box">
-
-<strong>
-    ⚡ STREETWEAR
-</strong>
-
-<p>
-    Günlük urban stil
-</p>
-
-</div>
-
-
-<div class="info-box">
-
-<strong>
-    ✓ GÜVENLİ ALIŞVERİŞ
-</strong>
-
-<p>
-    EFT / Havale ödeme
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- COLLECTION -->
-
-<section class="collection" id="collection">
-
-
-<div class="section-top">
-
-<div>
-
-<div class="section-label">
-    EGEDRIP COLLECTION
-</div>
-
-<h2 class="section-title">
-    Yeni Sezon.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-    Streetwear kültüründen ilham alan,
-    rahat ve dikkat çekici parçalar.
-    Kendi drip'ini oluştur.
-</p>
-
-</div>
-
-
-
-<div class="categories">
-
-<button class="active"
-onclick="filterProducts('Tümü')">
-    TÜMÜ
-</button>
-
-<button onclick="filterProducts('Tişört')">
-    TİŞÖRT
-</button>
-
-<button onclick="filterProducts('Sweatshirt')">
-    SWEATSHIRT
-</button>
-
-<button onclick="filterProducts('Pantolon')">
-    PANTOLON
-</button>
-
-<button onclick="filterProducts('Aksesuar')">
-    AKSESUAR
-</button>
-
-</div>
-
-
-
-<div class="products" id="products"></div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="footer-logo">
-    ege<span>Drip</span>
-</div>
-
-<p class="footer-text">
-    NEW SEASON · STREETWEAR · EGEDRIP
-</p>
-
-
-<div class="footer-bottom">
-
-<span>
-    © 2026 egeDrip
-</span>
-
-<span>
-    EFT / Havale ile ödeme
-</span>
-
-</div>
-
-</footer>
-
-
-
-<!-- CART -->
-
-<div class="overlay" id="cartOverlay">
-
-<div class="cart">
-
-<div class="cart-header">
-
-<div>
-
-<div class="section-label">
-    EGEDRIP
-</div>
-
-<h2>
-    Sepetim
-</h2>
-
-</div>
-
-<button onclick="closeCart()">
-    ×
-</button>
-
-</div>
-
-
-<div id="cartItems"></div>
-
-
-<div class="cart-total">
-
-<div class="total-line">
-
-<span>
-    Toplam
-</span>
-
-<strong id="cartTotal">
-    ₺0
-</strong>
-
-</div>
-
-
-<button class="checkout-button"
-onclick="checkout()">
-    ÖDEMEYE GEÇ →
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="sale-closed" id="saleClosed">
-    Satışlar çok yakında başlayacak.
-</div>
-
-
-
-<script>
-
-
-/* ======================================
-   SATIŞ AYARI
-
-   ŞİMDİ FALSE BIRAK.
-
-   ÜRÜNLER HAZIR OLDUĞUNDA:
-   false → true
-
-====================================== */
-
-const SATIS_ACIK = false;
-
-
-
-/* ======================================
-   ÖRNEK ÜRÜNLER
-
-   Daha sonra bunları gerçek ürünlerinle
-   değiştireceğiz.
-====================================== */
-
-const products = [
-
-{
-    id:1,
-    name:"Drip Oversize Tee",
-    category:"Tişört",
-    price:699,
-    old:799,
-    tag:"NEW",
-    image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
-},
-
-{
-    id:2,
-    name:"Blue Street Hoodie",
-    category:"Sweatshirt",
-    price:1299,
-    old:1499,
-    tag:"DROP 01",
-    image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85"
-},
-
-{
-    id:3,
-    name:"Urban Cargo",
-    category:"Pantolon",
-    price:1199,
-    old:1399,
-    tag:"TREND",
-    image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=85"
-},
-
-{
-    id:4,
-    name:"Black Heavy Hoodie",
-    category:"Sweatshirt",
-    price:1399,
-    old:1599,
-    tag:"NEW",
-    image:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85"
-},
-
-{
-    id:5,
-    name:"Street Cap",
-    category:"Aksesuar",
-    price:449,
-    old:549,
-    tag:"",
-    image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85"
-},
-
-{
-    id:6,
-    name:"Urban Sneaker",
-    category:"Aksesuar",
-    price:1899,
-    old:2199,
-    tag:"DROP",
-    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
-}
-
-];
-
-
-let cart=[];
-let currentCategory="Tümü";
-
-
-
-function money(value){
-
-    return new Intl.NumberFormat("tr-TR",{
-        style:"currency",
-        currency:"TRY",
-        maximumFractionDigits:0
-    }).format(value);
-
-}
-
-
-
-function renderProducts(){
-
-    const container=
-        document.getElementById("products");
-
-    container.innerHTML="";
-
-
-    const filtered=products.filter(product=>{
-
-        return currentCategory==="Tümü" ||
-               product.category===currentCategory;
-
-    });
-
-
-    filtered.forEach(product=>{
-
-        const card=document.createElement("div");
-
-        card.className="product";
-
-
-        card.innerHTML=`
-
-            <div class="product-image">
-
-                ${
-                    product.tag
-                    ?
-                    `<div class="product-tag">
-                        ${product.tag}
-                    </div>`
-                    :
-                    ""
-                }
-
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                >
-
-            </div>
-
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    ${product.category}
-                </div>
-
-                <div class="product-name">
-                    ${product.name}
-                </div>
-
-                <div class="price">
-
-                    ${money(product.price)}
-
-                    <span class="old-price">
-                        ${money(product.old)}
-                    </span>
-
-                </div>
-
-
-                <button
-                    class="add-btn ${SATIS_ACIK ? "" : "closed"}"
-                    onclick="addToCart(${product.id})"
-                >
-
-                    ${
-                        SATIS_ACIK
-                        ?
-                        "SEPETE EKLE"
-                        :
-                        "YAKINDA SATIŞTA"
-                    }
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        container.appendChild(card);
-
-    });
-
-}
-
-
-
-function filterProducts(category){
-
-    currentCategory=category;
-
-    renderProducts();
-
-    document
-        .getElementById("collection")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-}
-
-
-
-function goCollection(){
-
-    document
-        .getElementById("collection")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-}
-
-
-
-function addToCart(id){
-
-    if(!SATIS_ACIK){
-
-        const message=
-            document.getElementById("saleClosed");
-
-        message.style.display="block";
-
-        setTimeout(()=>{
-            message.style.display="none";
-        },2500);
-
-        return;
-    }
-
-
-    const product=
-        products.find(p=>p.id===id);
-
-
-    const existing=
-        cart.find(p=>p.id===id);
-
-
-    if(existing){
-
-        existing.qty++;
-
-    }else{
-
-        cart.push({
-            ...product,
-            qty:1
-        });
-
-    }
-
-
-    updateCart();
-
-    openCart();
-
-}
-
-
-
-function updateCart(){
-
-    document
-        .getElementById("cartCount")
-        .textContent=
-        cart.reduce(
-            (total,item)=>total+item.qty,
-            0
-        );
-
-
-    const container=
-        document.getElementById("cartItems");
-
-
-    if(cart.length===0){
-
-        container.innerHTML=`
-
-            <div style="
-                text-align:center;
-                padding:50px 0;
-                color:#999;
-                font-size:12px;
-            ">
-                Sepetiniz boş.
-            </div>
-
-        `;
-
-    }else{
-
-        container.innerHTML=
-            cart.map(item=>`
-
-                <div class="cart-item">
-
-                    <img
-                        src="${item.image}"
-                        alt="${item.name}"
-                    >
-
-                    <div class="cart-item-info">
-
-                        <strong>
-                            ${item.name}
-                        </strong>
-
-                        <p>
-                            ${money(item.price)}
-                        </p>
-
-                        <div class="quantity">
-
-                            <button
-                                onclick="changeQuantity(${item.id},-1)">
-                                −
-                            </button>
-
-                            <b>
-                                ${item.qty}
-                            </b>
-
-                            <button
-                                onclick="changeQuantity(${item.id},1)">
-                                +
-                            </button>
-
-                        </div>
-
+    <div class="top-banner">
+        🔥 EFT / HAVALE İLE ÖDEMELERDE ANINDA %10 İNDİRİM! 🔥
+    </div>
+
+    <header>
+        <a href="#" class="logo">EGE<span>DRIPP</span></a>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Öne Çıkan Koleksiyon</h2>
+        
+        <div class="product-grid">
+            <!-- ÖRNEK ÜRÜN 1 -->
+            <div class="product-card">
+                <div class="product-image">[ Görsel Yüklenecek ]</div>
+                <div class="product-info">
+                    <div class="product-title">Drip Oversize Hoodie</div>
+                    <div class="price-box">
+                        <span class="original-price">1.200 TL</span>
+                        <span class="eft-price">(EFT ile 1.080 TL)</span>
                     </div>
-
+                    <a href="#payment" class="btn">Sipariş Ver</a>
                 </div>
+            </div>
 
-            `).join("");
+            <!-- ÖRNEK ÜRÜN 2 -->
+            <div class="product-card">
+                <div class="product-image">[ Görsel Yüklenecek ]</div>
+                <div class="product-info">
+                    <div class="product-title">Heavyweight Street Tee</div>
+                    <div class="price-box">
+                        <span class="original-price">650 TL</span>
+                        <span class="eft-price">(EFT ile 585 TL)</span>
+                    </div>
+                    <a href="#payment" class="btn">Sipariş Ver</a>
+                </div>
+            </div>
 
-    }
+            <!-- ÖRNEK ÜRÜN 3 -->
+            <div class="product-card">
+                <div class="product-image">[ Görsel Yüklenecek ]</div>
+                <div class="product-info">
+                    <div class="product-title">Cargo Track Pants</div>
+                    <div class="price-box">
+                        <span class="original-price">950 TL</span>
+                        <span class="eft-price">(EFT ile 855 TL)</span>
+                    </div>
+                    <a href="#payment" class="btn">Sipariş Ver</a>
+                </div>
+            </div>
+        </div>
 
+        <!-- ÖDEME BİLGİLERİ -->
+        <div class="checkout-section" id="payment">
+            <h2 style="text-transform: uppercase;">EFT / Havale Ödeme Bilgileri</h2>
+            <p style="color: var(--text-secondary);">Siparişinizin onaylanması için aşağıdaki hesaba ürün tutarını (%10 indirimli fiyat üzerinden) gönderip dekontu e-posta adresimize iletmeniz yeterlidir.</p>
+            
+            <div class="iban-box">
+                <div class="iban-details"><strong>Alıcı:</strong> EVRİM FUATGİL</div>
+                <div class="iban-details"><strong>IBAN:</strong> TR11 0086 9000 0000 0260 7954 85</div>
+                <div class="iban-details"><strong>İletişim / Dekont E-posta:</strong> egedripp0@gmail.com</div>
+                
+                <!-- SİPARİŞ NO / AÇIKLAMA UYARISI -->
+                <p class="payment-note">⚠️ * Lütfen ödeme yaparken transfer açıklama kısmına sipariş no veya ürün adını yazınız.</p>
+            </div>
+        </div>
+    </div>
 
-    const total=
-        cart.reduce(
-            (sum,item)=>
-                sum+(item.price*item.qty),
-            0
-        );
-
-
-    document
-        .getElementById("cartTotal")
-        .textContent=money(total);
-
-}
-
-
-
-function changeQuantity(id,change){
-
-    const item=
-        cart.find(p=>p.id===id);
-
-    if(!item)return;
-
-
-    item.qty+=change;
-
-
-    if(item.qty<=0){
-
-        cart=
-            cart.filter(p=>p.id!==id);
-
-    }
-
-
-    updateCart();
-
-}
-
-
-
-function openCart(){
-
-    if(!SATIS_ACIK){
-
-        const message=
-            document.getElementById("saleClosed");
-
-        message.style.display="block";
-
-        setTimeout(()=>{
-            message.style.display="none";
-        },2500);
-
-        return;
-    }
-
-
-    document
-        .getElementById("cartOverlay")
-        .classList.add("active");
-
-}
-
-
-
-function closeCart(){
-
-    document
-        .getElementById("cartOverlay")
-        .classList.remove("active");
-
-}
-
-
-
-function checkout(){
-
-    if(!SATIS_ACIK){
-
-        alert(
-            "Satışlar henüz başlamadı. Çok yakında!"
-        );
-
-        return;
-
-    }
-
-
-    if(cart.length===0){
-
-        alert("Sepetiniz boş.");
-
-        return;
-
-    }
-
-
-    /*
-        BURAYA DAHA SONRA
-        GERÇEK SİPARİŞ / EFT-HAVALE
-        SİSTEMİNİ BAĞLAYACAĞIZ.
-    */
-
-    alert(
-        "Sipariş sistemi satışlar açıldığında aktif olacaktır."
-    );
-
-}
-
-
-
-renderProducts();
-updateCart();
-
-</script>
+    <footer>
+        <p>&copy; 2026 EGEDRIPP. Tüm Hakları Saklıdır.</p>
+    </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
